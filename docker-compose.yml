@@ -1,0 +1,19 @@
+version: '3'
+    
+services:
+    db:
+        image: postgres
+        environment:
+            - POSTGRES_DB=shortener
+            - POSTGRES_USER=${DB_USER}
+            - POSTGRES_PASSWORD=${DB_PASS}
+    web:
+        build: .
+        ports:
+        - "80:8080"
+        depends_on:
+            - db
+        environment:
+            - DB_USER=${DB_USER}
+            - DB_PASS=${DB_PASS}
+            - SHORTENER_PG_URL=postgresql://${DB_USER}:${DB_PASS}@db/

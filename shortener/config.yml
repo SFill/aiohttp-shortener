@@ -1,0 +1,11 @@
+postgres:
+  database: shortener 
+  user: !ENV ${DB_USER}
+  password: !ENV ${DB_PASS}
+  host: db
+  # user: shortener
+  # password: shortener
+  # host: localhost
+  port: 5432
+
+
