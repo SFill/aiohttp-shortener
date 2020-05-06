@@ -2,7 +2,7 @@ postgres:
   database: shortener 
   user: !ENV ${DB_USER}
   password: !ENV ${DB_PASS}
-  host: db
+  host: !ENV ${DB_HOST}
   # user: shortener
   # password: shortener
   # host: localhost

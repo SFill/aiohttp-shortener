@@ -17,3 +17,4 @@ services:
             - DB_USER=${DB_USER}
             - DB_PASS=${DB_PASS}
             - SHORTENER_PG_URL=postgresql://${DB_USER}:${DB_PASS}@db/
+            - DB_HOST=db

@@ -1,11 +1,23 @@
 from pathlib import Path
 from aiopg.sa import create_engine
+from shortener.utils.parse_config import get_config
 
-DEFAULT_PG_URL = 'postgresql://shortener:shortener@localhost/'
+
 BASE_DIR = Path(__file__).parent.parent.resolve()
 ALEMBIC_INI = BASE_DIR.joinpath('alembic.ini')
 ALEMBIC_SCRIPT_LOCATION = BASE_DIR.joinpath('db', 'alembic')
 CONFIG_PATH = BASE_DIR.joinpath('config.yml')
+
+config = get_config(CONFIG_PATH)
+
+
+def get_default_pg_url():
+    pg = config['postgres']
+    user, password, host, database = pg['user'], pg['password'], pg['host'], pg['database']
+    return f'postgresql://{user}:{password}@{host}/{database}'
+
+
+DEFAULT_PG_URL = get_default_pg_url()
 
 
 async def setup_pg(app):
