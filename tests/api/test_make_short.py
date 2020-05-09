@@ -3,7 +3,7 @@ from aiohttp.test_utils import TestClient
 from shortener.utils.testing import select_shorts, create_short, MockedHttpFound
 
 
-async def test_create_success(api_client: TestClient):
+async def test_shortener(api_client: TestClient):
     db = api_client.app['db']
 
     # запрос на создание короткой ссылки

@@ -1,7 +1,8 @@
 import os
 import logging
 
-from shortener.utils.pg import ALEMBIC_INI, ALEMBIC_SCRIPT_LOCATION, DEFAULT_PG_URL
+from shortener.utils.paths import ALEMBIC_INI, ALEMBIC_SCRIPT_LOCATION
+from shortener.utils.pg import  DEFAULT_PG_URL
 from aiohttp.web import run_app as _run_app
 from shortener.main import create_app
 from alembic.config import CommandLine, Config

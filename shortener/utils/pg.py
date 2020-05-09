@@ -1,12 +1,6 @@
-from pathlib import Path
 from aiopg.sa import create_engine
 from shortener.utils.parse_config import get_config
-
-
-BASE_DIR = Path(__file__).parent.parent.resolve()
-ALEMBIC_INI = BASE_DIR.joinpath('alembic.ini')
-ALEMBIC_SCRIPT_LOCATION = BASE_DIR.joinpath('db', 'alembic')
-CONFIG_PATH = BASE_DIR.joinpath('config.yml')
+from shortener.utils.paths import CONFIG_PATH
 
 config = get_config(CONFIG_PATH)
 

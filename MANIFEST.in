@@ -1,4 +1,4 @@
-include README.rst
+include README.md
 include requirements*.txt
 include shortener/alembic.ini
 include shortener/config.yml

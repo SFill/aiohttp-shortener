@@ -1,3 +1,3 @@
 #!/bin/bash
-source ./venv/bin/activate && python setup.py sdist
+python3 setup.py sdist
 docker-compose  up --build --force-recreate

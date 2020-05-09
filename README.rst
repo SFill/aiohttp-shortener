@@ -1,6 +1,0 @@
-*****
-SHortener
-*****
-
-todo add info
-#############

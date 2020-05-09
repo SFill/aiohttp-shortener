@@ -18,7 +18,7 @@ def load_requirements(fname: str) -> list:
 
 setup(
     name=module_name,
-    long_description=open('README.rst').read(),
+    long_description=open('README.md').read(),
     platforms='all',
     python_requires='>=3.7',
     packages=find_packages(exclude=['tests']),
