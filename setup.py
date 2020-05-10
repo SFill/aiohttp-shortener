@@ -18,7 +18,11 @@ def load_requirements(fname: str) -> list:
 
 setup(
     name=module_name,
+    url='https://github.com/SFill/aiohttp-shortener',
+    author='nelson',
+    author_email='rootacces00@gmail.com',
     long_description=open('README.md').read(),
+    version="0.1",
     platforms='all',
     python_requires='>=3.7',
     packages=find_packages(exclude=['tests']),

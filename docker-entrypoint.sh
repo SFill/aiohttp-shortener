@@ -1,5 +1,7 @@
-#!/bin/bash
-while !</dev/tcp/db/5432
+#!/usr/bin/env bash
+set -e
+
+while !</dev/tcp/${DB_HOST}/5432
     do sleep 1
 done
 shortener-db upgrade head
